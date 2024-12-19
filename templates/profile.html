@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo-and-nav">
             <div class="logo">Codecks</div>
@@ -18,11 +18,20 @@
             </ul>
         </div>
     </nav>
-    <div class="profile-content">
-        <h1>Your Profile</h1>
-        <p>Welcome to your profile page. Here you can view or update your details.</p>
-        <button onclick="updateProfile()">Update Profile</button>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+        <div class="profile-card">
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile Picture" class="profile-img">
+            <div class="profile-overlay">
+                <div class="profile-description">
+                    <h2>John Doe</h2>
+                    <p>Welcome to my profile! I'm a software developer passionate about coding and learning new technologies.</p>
+                </div>
+            </div>
+        </div>
     </div>
+
     <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
 </body>
 </html>
