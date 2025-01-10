@@ -3,35 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <title>Netflix-Style Profile Page</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .profile-container {
+            text-align: center;
+        }
+        .profile-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .profiles {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .profile {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+        .profile:hover {
+            transform: scale(1.1);
+        }
+        .profile-name {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo-and-nav">
-            <div class="logo">Codecks</div>
-            <ul class="nav-links">
-                <li><a href="{{ url_for('homepage') }}">Home</a></li>
-                <li><a href="{{ url_for('profile') }}">Profile</a></li>
-                <li><a href="{{ url_for('works') }}">Works</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Profile Section -->
     <div class="profile-container">
-        <div class="profile-card">
-            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile Picture" class="profile-img">
-            <div class="profile-overlay">
-                <div class="profile-description">
-                    <h2>John Doe</h2>
-                    <p>Welcome to my profile! I'm a software developer passionate about coding and learning new technologies.</p>
-                </div>
+        <h1>Who's Watching?</h1>
+        <div class="profiles">
+            <div class="profile" onclick="window.location.href='/profile/1'">
+                <img src="/static/images/image1.jpg" alt="Mama">
+                <div class="profile-name">Mama</div>
+            </div>
+            <div class="profile" onclick="window.location.href='/profile/2'">
+                <img src="/static/images/image2.jpg" alt="Jhayzer">
+                <div class="profile-name">Jhayzer</div>
+            </div>
+            <div class="profile" onclick="window.location.href='/profile/3'">
+                <img src="/static/images/image3.jpg" alt="Papa">
+                <div class="profile-name">Papa</div>
+            </div>
+            <div class="profile" onclick="window.location.href='/profile/4'">
+                <img src="/static/images/image4.jpg" alt="Ate">
+                <div class="profile-name">Ate</div>
+            </div>
+            <div class="profile" onclick="window.location.href='/profile/5'">
+                <img src="/static/images/image5.jpg" alt="Kuya">
+                <div class="profile-name">Kuya</div>
             </div>
         </div>
     </div>
-
-    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
 </body>
 </html>
